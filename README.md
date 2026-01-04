@@ -3,6 +3,9 @@
 ## Overview
 This project demonstrates the power of AI in solving engineering synthesis problems. Specifically, it tackles a gear train design challenge where the goal is to achieve a specific reduction ratio while minimizing a complex cost function.
 
+> [!NOTE]
+> **Optimization Deep Dive**: For a detailed explanation of the mathematical optimization methods used (Differential Evolution vs. Dual Annealing) and why we are confident we found the global optimum, see [Optimization Methodology](docs/optimization_details.md).
+
 ## The Challenge
 **Goal**: Design a gear train with an **8:1 speed reduction ratio** where the input and output shafts rotate in the **same direction**.
 

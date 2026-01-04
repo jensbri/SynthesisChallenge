@@ -1,5 +1,5 @@
 import numpy as np
-from scipy.optimize import differential_evolution
+from scipy.optimize import differential_evolution, dual_annealing
 
 # Constants from the brief
 X_GEAR_COST = 7.0
@@ -102,20 +102,23 @@ def evaluate_simple_train():
     print(f"  Cost: ${P:.2f}")
     return P
 
-def run_optimization():
-    print("Starting Optimization for 4-Gear Compound Train...")
-    
-    # Bounds:
-    # shaft2_idx: 1 to 12 (H2 to H13)
-    # r1: 0.1 to 10 cm
-    # r3: 0.1 to 10 cm
-    # lr: -1.51 to 1.51 cm
+def run_differential_evolution():
+    print("\n--- Running Differential Evolution ---")
     bounds = [(1, 12.99), (0.1, 10), (0.1, 10), (-1.51, 1.51)]
-    
     result = differential_evolution(objective_function, bounds, seed=42, strategy='best1bin', popsize=15)
-    
-    print("\nOptimization Complete!")
-    print(f"Optimal Score (Cost): ${result.fun:.2f}")
+    print(f"DE Score: ${result.fun:.2f}")
+    return result
+
+def run_dual_annealing():
+    print("\n--- Running Dual Annealing ---")
+    bounds = [(1, 12.99), (0.1, 10), (0.1, 10), (-1.51, 1.51)]
+    # Dual Annealing is another global optimization method
+    result = dual_annealing(objective_function, bounds, seed=42, maxiter=1000)
+    print(f"DA Score: ${result.fun:.2f}")
+    return result
+
+def print_design(result, method_name):
+    print(f"\n{method_name} Optimal Score (Cost): ${result.fun:.2f}")
     
     # Decode best parameters
     s2_idx, r1, r3, lr = result.x
@@ -127,22 +130,27 @@ def run_optimization():
     
     ratio = (r2/r1) * (r4/r3)
     
-    print("\nDesign Details:")
-    print(f"  Shaft 1 Position: 0.0 cm (H1)")
+    print("Design Details:")
     print(f"  Shaft 2 Position: {s2_pos} cm (H{int(s2_idx)+1})")
-    print(f"  Shaft 3 Position: {s3_pos:.4f} cm (H14 + {lr:.4f} cm)")
     print(f"  Slot Displacement (lr): {lr:.4f} cm")
-    print("-" * 30)
-    print(f"  Gear 1 Radius (r1): {r1:.4f} cm")
-    print(f"  Gear 2 Radius (r2): {r2:.4f} cm")
-    print(f"  Gear 3 Radius (r3): {r3:.4f} cm")
-    print(f"  Gear 4 Radius (r4): {r4:.4f} cm")
-    print("-" * 30)
+    print(f"  Radii: r1={r1:.4f}, r2={r2:.4f}, r3={r3:.4f}, r4={r4:.4f}")
     print(f"  Total Ratio: {ratio:.4f}")
+
+def run_optimization():
+    print("Starting Optimization Comparison...")
     
+    # 1. Differential Evolution
+    de_result = run_differential_evolution()
+    print_design(de_result, "Differential Evolution")
+    
+    # 2. Dual Annealing
+    da_result = run_dual_annealing()
+    print_design(da_result, "Dual Annealing")
+    
+    # 3. Simple Train Baseline
     evaluate_simple_train()
     
-    return result.fun
+    return de_result.fun
 
 if __name__ == "__main__":
     run_optimization()
