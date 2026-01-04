@@ -53,6 +53,7 @@ We have generated interactive Plotly visualizations to demonstrate the differenc
 *   **Description**: The solution the AI chat *claimed* was optimal. While geometrically possible, the visualization clearly shows the large gears that result in a real cost of ~$98, contradicting the chat's claim of $49.
 
 ## Documentation
+*   **[Synthesis Calculator (Excel)](docs/synthesis_calculator.xlsx)**: A spreadsheet with pre-built formulas to calculate the objective function for any custom design.
 *   [Input Summary](docs/input_summary.md): Detailed breakdown of the PDF requirements.
 *   [Chat History Analysis](docs/chat_history.md): Insights from the initial Gemini brainstorming session.
 
