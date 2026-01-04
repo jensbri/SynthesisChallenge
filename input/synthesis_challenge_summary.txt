@@ -1,0 +1,155 @@
+        Synthesis Challenge 1 Summary
+        Our Synthesis Challenge 1 is about gear train design. For the best learning
+        experience, we recommend watching the videos linked as a Canvas
+    1   announcement to get a fun introduction. This document shall act as a
+                   2         3           4                 5                         6               7                          8
+
+
+        reference you are presented with the key facts in a condensed view.
+A
+            A sketch with important dimensions and indicative positions for your                                                            A
+
+
+
+        gears is shown in Figure 1.
+
+
+B                                                                                                                                           B
+            2cm   13X 2cm
+                                                                                                     3.02cm
+
+
+
+
+                             Figure 1: Important Dimensions
+C                                                                                                                                           C
+
+
+
+
+            Attached to this PDF you will also find a “doodling-template” (drawn
+        to size: A4 landscape) to facilitate your concept design activities.
+D                                                                                                                                           D
+
+
+
+
+        Functional Requirements
+        The basic requirements that determine if your design will be considered
+E
+        to be working or not are as follows:                                                                                                E
+
+
+
+
+                                                   Dept.       Technical reference   Created by          Approved by
+
+           • Rotation shall be transmitted from the Input-Shaft        to Output-Shaft
+                                                               Jens Brinkmann 2/03/20
+                                                                                     Document type       Document status
+
+
+             using gears.                                                            Title               DWG No.
+
+F
+           • A Speed Reduction Ratio of exactly 81 needs to    Try1be achieved                                                              F
+
+
+                                                                                                         Rev.   Date of issue       Sheet
+
+
+
+    1
+             “this means 8 turns of the input shaft shall result in 1 turn of the
+                   2         3           4                 5                         6               7                          8
+                                                                                                                                      1/1
+
+             output shaft”.
+           • The direction of rotation shall be maintained. “if the input shafts
+             rotates counter-clockwise, the output shaft shall also rotate counter-
+             clockwise. Think about how that can be achieved, you might want to
+             re-watch the videos”.
+
+        Other requirements and constraints
+        The following requirements and constraints (among other) set further bound-
+        aries for acceptable solutions.
+
+           • Maximum number of shafts that can be used: 8, “but think about the
+             implications of using many shafts for the Objective Function”.
+
+
+                                              1
+   • All holes (H1-H13) are fixed in position, only hole H14 can be consid-
+     ered a slot. This allows a maximum movement of 1.51cm to the left
+     and right.
+
+Objectives
+Your design shall at the same time minimise the number of shafts used,
+the size of the gears and the distance of repositioning hole 14. This is
+summarised by this function:
+                                         N
+                                         !
+                 min : P = x · N + y ·       (Π · rn2 ) + z · lr3
+                                         n
+
+   Where:
+           $7            $             1
+   • x = gear , y = 0.1 cm 2 , z = 10 cm
+   • N = overall number of gears
+   • r = radius of each gear [cm]
+   • lr = distance of repositioning the output gear [cm]
+
+Description
+One part of the mark you are about to receive for this assignment is deter-
+mined if your design fulfils the requirements. The other part is determined
+by how well your particular design performs - in other words: “how well you
+minimise the Objective Function in comparison to the rest of the class, so:
+Yes! This is a challenge”.
+
+
+
+
+                                    2
+Input
+
+
+
+
+H1      H2    H3    H4    H5    H6     H7     H8     H9     H10    H11    H12    H13        H14
+
+0cm     2cm   4cm   6cm   8cm   10cm   12cm   14cm   16cm   18cm   20cm   22cm   24cm       26cm
+
+
+                                                                                  24.49cm          27.51cm
+
+                                                                                            Output
+
+
+Input
+
+
+
+
+H1      H2    H3    H4    H5    H6     H7     H8     H9     H10    H11    H12    H13        H14
+
+0cm     2cm   4cm   6cm   8cm   10cm   12cm   14cm   16cm   18cm   20cm   22cm   24cm       26cm
+
+
+                                                                                  24.49cm          27.51cm
+
+                                                                                            Output
+
+Input
+
+
+
+
+H1      H2    H3    H4    H5    H6     H7     H8     H9     H10    H11    H12    H13        H14
+
+0cm     2cm   4cm   6cm   8cm   10cm   12cm   14cm   16cm   18cm   20cm   22cm   24cm       26cm
+
+
+                                                                                  24.49cm          27.51cm
+
+                                                                                            Output
+
