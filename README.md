@@ -35,14 +35,19 @@ The following table summarizes the solutions discovered during the AI-assisted e
 *   **Compound Train Trap**: While reducing the number of gears (N=4) saves $7, the large gaps (14cm, 12cm) require massive gears to bridge them. Since cost scales with Area ($r^2$), large gears are prohibitively expensive. The initial AI chat underestimated this area penalty.
 
 ## Visualizations
-We have generated interactive Plotly visualizations to demonstrate the differences between the solutions.
+We have generated interactive Plotly visualizations to demonstrate the differences between the solutions. Click on the thumbnails to view the interactive 3D/zoomable plots.
 
-*   **[Solution 1: Simple Optimized (Verified Winner)](docs/plots/simple_optimized.html)**
-    *   *Description*: A 5-gear train using small idlers to bridge the gaps. Notice how the small red gears keep the total area low.
-*   **[Solution 2: Compound Train (Failed)](docs/plots/compound_failed.html)**
-    *   *Description*: The best attempt at a 4-gear compound train. Notice the massive blue and green gears required to bridge the 14cm and 12cm gaps. This visualizes why the area cost is so high ($91+).
-*   **[Chat Hallucination: "Ideal" Compound](docs/plots/chat_hallucination.html)**
-    *   *Description*: The solution the AI chat *claimed* was optimal. While geometrically possible, the visualization clearly shows the large gears that result in a real cost of ~$98, contradicting the chat's claim of $49.
+### 1. Simple Optimized (Verified Winner)
+[![Simple Optimized](docs/plots/simple_optimized.png)](docs/plots/simple_optimized.html)
+*   **Description**: A 5-gear train using small idlers to bridge the gaps. Notice how the small red gears keep the total area low.
+
+### 2. Compound Train (Failed)
+[![Compound Failed](docs/plots/compound_failed.png)](docs/plots/compound_failed.html)
+*   **Description**: The best attempt at a 4-gear compound train. Notice the massive blue and green gears required to bridge the 14cm and 12cm gaps. This visualizes why the area cost is so high ($91+).
+
+### 3. Chat Hallucination: "Ideal" Compound
+[![Chat Hallucination](docs/plots/chat_hallucination.png)](docs/plots/chat_hallucination.html)
+*   **Description**: The solution the AI chat *claimed* was optimal. While geometrically possible, the visualization clearly shows the large gears that result in a real cost of ~$98, contradicting the chat's claim of $49.
 
 ## Documentation
 *   [Input Summary](docs/input_summary.md): Detailed breakdown of the PDF requirements.

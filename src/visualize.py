@@ -75,10 +75,17 @@ def create_gear_plot(gears, title, filename, rail_length=26):
         width=1000
     )
 
-    # Save
-    filepath = os.path.join(OUTPUT_DIR, filename)
-    fig.write_html(filepath, include_plotlyjs='cdn')
-    print(f"Generated plot: {filepath}")
+    # Save HTML
+    filepath_html = os.path.join(OUTPUT_DIR, filename)
+    fig.write_html(filepath_html, include_plotlyjs='cdn')
+    print(f"Generated plot: {filepath_html}")
+    
+    # Save PNG (Thumbnail)
+    filename_png = filename.replace(".html", ".png")
+    filepath_png = os.path.join(OUTPUT_DIR, filename_png)
+    # Use scale=2 for better quality, but keep it small enough for thumbnail
+    fig.write_image(filepath_png, scale=2)
+    print(f"Generated image: {filepath_png}")
 
 def visualize_simple_optimized():
     # Simple Train (Verified)
