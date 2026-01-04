@@ -77,7 +77,7 @@ def create_gear_plot(gears, title, filename, rail_length=26):
 
     # Save
     filepath = os.path.join(OUTPUT_DIR, filename)
-    fig.write_html(filepath)
+    fig.write_html(filepath, include_plotlyjs='cdn')
     print(f"Generated plot: {filepath}")
 
 def visualize_simple_optimized():
