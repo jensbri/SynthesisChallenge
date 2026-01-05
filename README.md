@@ -67,3 +67,23 @@ We have generated interactive Plotly visualizations to demonstrate the differenc
     ```bash
     python src/optimize.py
     ```
+
+## Sanity Check: The Spectrum of Solutions
+To validate our findings, we explored two extreme "edge cases" to see if a simpler or more complex approach could beat the **$57.21** benchmark.
+
+### 1. The "Brute Force" Bridge (8 Shafts)
+*   **Concept**: Use the maximum allowed shafts (8) to bridge the gap with small gears, performing the 8:1 reduction only at the very end.
+*   **Result**: **$107.88** (Failed)
+*   **Why**:
+    *   **High Fixed Cost**: 8 gears cost $56 alone.
+    *   **Geometric Penalty**: Even with small bridging gears, the final reduction stage requires a massive output gear ($r \approx 12.44$ cm) to achieve the 8:1 ratio against the small penultimate gear. This single large gear adds ~$48 in area cost.
+
+### 2. The "Three Gear" Minimalist (3 Shafts)
+*   **Concept**: Use the minimum number of gears (3) to bridge the gap and achieve the ratio.
+*   **Result**: **$62.26** (Failed)
+*   **Why**:
+    *   **Area Penalty**: While saving $14 on gear count compared to the 5-gear solution, the large gap (26cm) forces the intermediate idler to be very large ($r \approx 9.14$ cm).
+    *   **Trade-off**: The area cost of this single large idler (~$26) is greater than the cost of adding two extra small gears to break up the distance.
+
+**Conclusion**: The 5-gear solution represents the "sweet spot" where the cost of adding gears is perfectly balanced by the savings in total gear area.
+
