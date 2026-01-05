@@ -135,7 +135,36 @@ def visualize_chat_hallucination():
     ]
     create_gear_plot(gears, "Chat Hallucination: 'Ideal' Compound (Real Cost: ~$98)", "chat_hallucination.html")
 
+def visualize_brute_force():
+    # Brute Force (8 Shafts)
+    # H1, H2, H3, H4, H5, H6, H7, H14 (14cm gap at end)
+    # Radii: [1.56, 0.44, 1.56, 0.44, 1.56, 0.44, 1.56, 12.44]
+    gears = [
+        {"name": "G1 (Input)", "x": 0, "r": 1.5556, "color": "firebrick"},
+        {"name": "G2 (Idler)", "x": 2, "r": 0.4444, "color": "royalblue"},
+        {"name": "G3 (Idler)", "x": 4, "r": 1.5556, "color": "firebrick"},
+        {"name": "G4 (Idler)", "x": 6, "r": 0.4444, "color": "royalblue"},
+        {"name": "G5 (Idler)", "x": 8, "r": 1.5556, "color": "firebrick"},
+        {"name": "G6 (Idler)", "x": 10, "r": 0.4444, "color": "royalblue"},
+        {"name": "G7 (Idler)", "x": 12, "r": 1.5556, "color": "firebrick"},
+        {"name": "G8 (Output)", "x": 26, "r": 12.4444, "color": "forestgreen"}
+    ]
+    create_gear_plot(gears, "Sanity Check 1: Brute Force (Cost: ~$108)", "brute_force.html")
+
+def visualize_three_gear():
+    # Three Gear Minimalist (3 Shafts)
+    # H1(0), H6(10), H14(26)
+    # Radii: [0.86, 9.14, 6.86]
+    gears = [
+        {"name": "G1 (Input)", "x": 0, "r": 0.8571, "color": "firebrick"},
+        {"name": "G2 (Idler)", "x": 10, "r": 9.1429, "color": "royalblue"},
+        {"name": "G3 (Output)", "x": 26, "r": 6.8571, "color": "forestgreen"}
+    ]
+    create_gear_plot(gears, "Sanity Check 2: Three Gear Minimalist (Cost: ~$62)", "three_gear.html")
+
 if __name__ == "__main__":
     visualize_simple_optimized()
     visualize_compound_failed()
     visualize_chat_hallucination()
+    visualize_brute_force()
+    visualize_three_gear()
