@@ -56,6 +56,7 @@ We have generated interactive Plotly visualizations to demonstrate the differenc
 *   **[Synthesis Calculator (Excel)](docs/synthesis_calculator.xlsx)**: A spreadsheet with pre-built formulas to calculate the objective function for any custom design.
 *   [Input Summary](docs/input_summary.md): Detailed breakdown of the PDF requirements.
 *   [Chat History Analysis](docs/chat_history.md): Insights from the initial Gemini brainstorming session.
+*   [Chat History (Formatted)](docs/chat_history_formatted.md): The full, readable chat history with Gemini.
 
 ## Getting Started
 1.  **Install Dependencies**:

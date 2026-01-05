@@ -4,3 +4,5 @@ plotly
 pandas
 kaleido
 openpyxl
+beautifulsoup4
+markdownify
