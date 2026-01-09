@@ -15,9 +15,11 @@ This project demonstrates the power of AI in solving engineering synthesis probl
 *   **Output**: A slot at 26cm allowing +/- 1.51cm movement.
 
 **Objective Function**:
+
 $$
 P = 7N + 0.1 \sum (\pi r^2) + 10 l_r^3
 $$
+
 *   $N$: Number of gears ($7/gear).
 *   $\sum (\pi r^2)$: Total gear area ($0.1/cm^2).
 *   $l_r$: Output shaft displacement ($10/cm^3).
