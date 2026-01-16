@@ -1,13 +1,29 @@
 # Synthesis Challenge AI Solver
 
-## Overview
-This project demonstrates the power of AI in solving engineering synthesis problems. Specifically, it tackles a gear train design challenge where the goal is to achieve a specific reduction ratio while minimizing a complex cost function.
-
 > [!NOTE]
+> **Background**
+> This task was originally designed for Mechanical Engineering students to foster their abilities in conducting synthesis, distinguishing it from typical analytical exercises.
+>
+> **The Setting**
+> The challenge involves a gear train design where an input shaft (with a gear) must be connected to an output shaft (with a gear).
+>
+> **Specific Requirements**
+> *   **Goal**: 8:1 speed reduction ratio.
+> *   **Direction**: Input and output shafts must rotate in the **same direction**.
+> *   **Constraints**: Fixed holes at 2cm intervals; Optimization of cost function involving gear count, area, and shaft displacement.
+>
+> All detailed requirements can be found here: [Synthesis Challenge Summary PDF](input/20200303%20Synthesis%20Challenge%201%20Summary.pdf)
+
+## The Mission
+
+**Now Generative AI shall solve the task.**
+
+This project demonstrates the power of AI in solving this engineering synthesis problem. Specifically, it tackles the gear train design challenge where the goal is to achieve the specific reduction ratio while minimizing a complex cost function.
+
+> [!TIP]
 > **Optimization Deep Dive**: For a detailed explanation of the mathematical optimization methods used (Differential Evolution vs. Dual Annealing) and why we are confident we found the global optimum, see [Optimization Methodology](docs/optimization_details.md).
 
-## The Challenge
-**Goal**: Design a gear train with an **8:1 speed reduction ratio** where the input and output shafts rotate in the **same direction**.
+## The Challenge Details
 
 **Constraints**:
 *   **Shafts**: Maximum of 8 shafts allowed.
@@ -31,7 +47,7 @@ The following table summarizes the solutions discovered during the AI-assisted e
 
 | ID | Solution Name | Type | Shafts | AI Chat Claim ($) | Verified Cost ($) | Status | Notes |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 1 | **Simple Optimized** | Simple | 5 | 57.23 | **57.21** | [x] Verified | **Best Solution**. Uses H1, H4, H7, H10, H14. |
+| 1 | **Simple Optimized** | Simple | 5 | 5 | 57.23 | **57.21** | [x] Verified | **Best Solution**. Uses H1, H4, H7, H10, H14. |
 | 2 | Compound Synthesis | Compound | 3 | 49.10 | 91.54 | [x] Failed | Chat hallucinated the area cost. Actual area is much larger. |
 | 3 | Optimized Compound | Compound | 3 | 48.92 | ~91.54 | [x] Failed | Physically impossible to achieve low area with large gaps. |
 | 4 | Nano-Ratio | Simple | 5 | 57.12 | TBD | [ ] | Likely similar to Simple Optimized. |
@@ -92,4 +108,3 @@ To validate our findings, we explored two extreme "edge cases" to see if a simpl
     *   **Trade-off**: The area cost of this single large idler (~$26) is greater than the cost of adding two extra small gears to break up the distance.
 
 **Conclusion**: The 5-gear solution represents the "sweet spot" where the cost of adding gears is perfectly balanced by the savings in total gear area.
-
